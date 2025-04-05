@@ -1,0 +1,25 @@
+export NODE_OPTIONS="--max-old-space-size=4096"
+
+python -m venv venv_py39
+source venv_py39/bin/activate
+vercel dev
+vercel --prod
+
+
+nvm install 18.18.0
+nvm use 18.18.0
+npm install -g vercel
+
+
+# Install Flask locally
+pip install flask
+
+# Run your Flask app directly
+python api/run.py
+
+# Then deploy to Vercel when you're ready
+vercel --prod
+
+
+docker build -t medical-transcription-app .
+docker run -p 2000:2000 medical-transcription-app

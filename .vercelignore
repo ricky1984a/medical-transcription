@@ -1,0 +1,23 @@
+# Local development environment
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment variables
+.env.local
+.env
+*.json
+secrets/
+
+# Test and documentation files
+tests/
+docs/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo

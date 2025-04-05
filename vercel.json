@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "run.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "20mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "run.py"
+    }
+  ],
+  "env": {
+    "FLASK_APP": "run.py",
+    "VERCEL": "1",
+    "FLASK_DEBUG": "0",
+    "PORT": "2000",
+    "SQLALCHEMY_POOL_SIZE": "5",
+    "SQLALCHEMY_MAX_OVERFLOW": "10",
+    "SQLALCHEMY_POOL_RECYCLE": "300",
+    "PYTHON_VERSION": "3.9"
+  },
+  "regions": ["iad1"]
+}
